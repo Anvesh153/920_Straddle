@@ -3,25 +3,29 @@
 
 Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://invite.dhan.co/?invite=YBAKG00069)
 
-## You are Solely and wholly Responsible for Your Loss, Author is Not Responsible for Any of Your Losses
-## Fork, clone and Run
-## Distributed under MIT Licence
-## Trading with Automated Algorithm's without Manual Supervision is Considered Illegal in Many Countries(Refer Law of The Land)
-## This is Highly Experimental Code written with Minimal Exceptions and Minimal Error Handling
-## Basic Code Created in an Hour purely for Education, Not for Trading Using Real Money
-## Trading API's are Free from Dhan and Data is Retrieved through NsePython
-## Doesnt work on Cloud
+## Broker- Dhan
 
-### Broker- Dhan
+### How to Use:-
 
-If you are using windows run 
+- Make sure python 3 is Installed in your 
+- Make Sure Your Trading Ac Balance is '0'
+- If you are using windows run pip install requirements.txt
+- If you are using a Linux Machine run pip3 install requirements.txt
+- Save your Client Id and Access token in dhancred.py file
+- can run python 920algo.py to start the program
+- Comment in issues if any Feedback is needed
+- Pull Requests are welcome
 
-pip install requirements.txt
+# Disclaimer
 
-If you are using a Linux Machine run 
+- You are Solely and wholly Responsible for Your Loss, Author is Not Responsible for Any of Your Losses
+- Fork, clone and Run
+- Distributed under MIT Licence
+- Trading with Automated Algorithm's without Manual Supervision is Considered Illegal in Many Countries(Refer Law of The Land)
+- This is Highly Experimental Code written with Minimal Exceptions and Minimal Error Handling
+- Basic Code Created in an Hour purely for Education, Not for Trading Using Real Money
+- Trading API's are Free from Dhan and Data is Retrieved through NsePython
+- Doesnt work on Cloud(AWS/Azure etc..)
 
-pip3 install requirements.txt
-
-###
-
-Can Add Web Sockets, Exceptions, Error Handlings and Much more. 
+## Note- Using Third party Library for Price Data Retrieval since Dhan Data API's are Chargeable
+## Since Websockets are not yet provided by Dhan we are using third party library with Sleep Functions in code
