@@ -2,6 +2,7 @@
 ![image](https://user-images.githubusercontent.com/117473489/233215718-7d2358ec-b820-40c5-84ac-a9b88733f276.png)
 
 Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://invite.dhan.co/?invite=YBAKG00069)
+- Perks: No Annual Maintainence Charges, Free Trading API's, Free Data API for Supertraders & INR 10 Brokerage for Women Traders
 
 ### Broker- Dhan
 
