@@ -3,9 +3,9 @@
 
 Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://invite.dhan.co/?invite=YBAKG00069)
 
-## Broker- Dhan
-
 ### Broker- Dhan
+
+## Usage Instructions
 
 - Make sure python 3 is Installed in your 
 - Make Sure Your Trading Ac Balance is '0'
