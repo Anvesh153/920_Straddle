@@ -5,7 +5,7 @@ Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://inv
 
 ## Broker- Dhan
 
-### How to Use:-
+### Broker- Dhan
 
 - Make sure python 3 is Installed in your 
 - Make Sure Your Trading Ac Balance is '0'
