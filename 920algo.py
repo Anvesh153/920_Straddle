@@ -24,8 +24,8 @@ print(f"Session to Broker Dhan Established at {datetime.datetime.now()}")
 
 ## Lot Size and SL Points ##########
 
-Qty= 50
-SL= 30
+Qty= 50 #For Nifty Enter in Multiples of 50
+SL= 30 # SL in Points
 ############################################################################################
 underlying = "NIFTY"
 nearestexpiry= expiry_list(underlying)
@@ -152,16 +152,16 @@ while traded == "No":
         if ((LTPofCE > ceSL) or (dt.hour >= 15 and dt.minute >= 15)):
             exitCE= dhan.place_order(security_id=str(securityidCE),  exchange_segment=dhan.FNO,transaction_type=dhan.BUY,quantity=Qty,order_type=dhan.MARKET,product_type=dhan.INTRA,price=0)
             traded = "CE"
-            print("EXiting CE Leg")
+            print(f"Call SL Hit,LTP of CE Leg is {LTPofCE}")
             time.sleep(5)
         elif((LTPofPE > peSL) or (dt.hour >= 15 and dt.minute >= 15)):
 
             exitPE= dhan.place_order(security_id=str(securityidPE),  exchange_segment=dhan.FNO,transaction_type=dhan.BUY,quantity=Qty,order_type=dhan.MARKET,product_type=dhan.INTRA,price=0)
             traded = "PE"
-            print("Exiting PE Leg")
+            print(f"PUT SL Hit,LTP of PE Leg is {LTPofPE}")
             time.sleep(5)
         else:
-            print("No SL is Hit")
+            print(f"No SL is Hit, LTP of CE is {LTPofCE} and LTP of PE is {LTPofPE}")
             time.sleep(5)
             
     except:
@@ -177,10 +177,10 @@ while traded == "No":
                 if ((ltp > peSL) or (dt.hour >= 15 and dt.minute >= 15)):
                     exitPE= dhan.place_order(security_id=str(securityidPE),  exchange_segment=dhan.FNO,transaction_type=dhan.BUY,quantity=Qty,order_type=dhan.MARKET,product_type=dhan.INTRA,price=0)
                     traded = "Close"
-                    print("PE SL Hit or Market is About to be closed")
+                    print(f"PE SL Hit, LTP of PE is {LTPofPE}")
                     time.sleep(5)
                 else:
-                    print("PE SL not hit")
+                    print(f"PE SL not hit,LTP of PE is {LTPofPE}")
                     time.sleep(1)
                   
             except:
@@ -199,7 +199,7 @@ while traded == "No":
                     time.sleep(5)
                     
                 else:
-                    print("CE SL not hit")
+                    print(f"CE SL not hit,LTP of CE is {LTPofCE}")
                     time.sleep(5)
             except:
                 print("Couldn't find LTP , RETRYING !!")
