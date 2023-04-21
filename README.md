@@ -8,7 +8,7 @@ Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://inv
 
 ## Usage Instructions
 
-- Make sure python 3 is Installed in your 
+- Make sure python 3 is Installed in your Machine
 - Make Sure Your Trading Ac Balance is '0'
 - If you are using windows run pip install requirements.txt
 - If you are using a Linux Machine run pip3 install requirements.txt
