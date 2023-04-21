@@ -37,16 +37,16 @@ print(f'Selected Expiry is {expiry}')
 # Downloading Scrip Master of Dhan
 
 print("Trying to Download Scrip Master from Broker....")
-# security_idsource = "https://images.dhan.co/api-data/api-scrip-master.csv"
+security_idsource = "https://images.dhan.co/api-data/api-scrip-master.csv"
 
-# todays_date= datetime.datetime.now().strftime("%Y-%m-%d")
+todays_date= datetime.datetime.now().strftime("%Y-%m-%d")
 
-# file_name= f'api-scrip-master.csv'
+file_name= f'api-scrip-master.csv'
 
-# response = requests.get(security_idsource)
-# with open(file_name, "wb") as f:
-#     f.write(response.content)
-#     print(f"Scrip Master '{file_name}' downloaded successfully.")
+response = requests.get(security_idsource)
+with open(file_name, "wb") as f:
+    f.write(response.content)
+    print(f"Scrip Master '{file_name}' downloaded successfully.")
 
 #Created a Pandas Data Frame for Placing Orders
 required_cols = ['SEM_EXM_EXCH_ID','SEM_SMST_SECURITY_ID','SEM_INSTRUMENT_NAME','SEM_TRADING_SYMBOL','SEM_CUSTOM_SYMBOL','SEM_EXPIRY_DATE','SEM_EXPIRY_FLAG']
