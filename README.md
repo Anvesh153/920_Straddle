@@ -25,7 +25,7 @@ Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://inv
 - Trading with Automated Algorithm's without Manual Supervision is Considered Illegal in Many Countries(Refer Law of The Land)
 - This is Highly Experimental Code written with Minimal Exceptions and Minimal Error Handling
 - Basic Code Created in an Hour purely for Education, Not for Trading Using Real Money
-- Trading API's are Free from [Dhan](https://invite.dhan.co/?invite=YBAKG00069) and Data is Retrieved through nsepython[nsepython](https://github.com/aeron7/nsepython)
+- Trading API's are Free from [Dhan](https://invite.dhan.co/?invite=YBAKG00069) and Data is Retrieved through [nsepython](https://github.com/aeron7/nsepython)
 - Doesnt work on Cloud(AWS/Azure etc..)
 
 ## Note- Using Third party Library for Price Data Retrieval since Dhan Data API's are Chargeable
