@@ -35,16 +35,18 @@ print(f'Selected Expiry is {expiry}')
 ##############################################################################################
 
 # Downloading Scrip Master of Dhan
-security_idsource = "https://images.dhan.co/api-data/api-scrip-master.csv"
 
-todays_date= datetime.datetime.now().strftime("%Y-%m-%d")
+print("Trying to Download Scrip Master from Broker....")
+# security_idsource = "https://images.dhan.co/api-data/api-scrip-master.csv"
 
-file_name= f'api-scrip-master.csv'
+# todays_date= datetime.datetime.now().strftime("%Y-%m-%d")
 
-response = requests.get(security_idsource)
-with open(file_name, "wb") as f:
-    f.write(response.content)
-    print(f"Scrip Master '{file_name}' downloaded successfully.")
+# file_name= f'api-scrip-master.csv'
+
+# response = requests.get(security_idsource)
+# with open(file_name, "wb") as f:
+#     f.write(response.content)
+#     print(f"Scrip Master '{file_name}' downloaded successfully.")
 
 #Created a Pandas Data Frame for Placing Orders
 required_cols = ['SEM_EXM_EXCH_ID','SEM_SMST_SECURITY_ID','SEM_INSTRUMENT_NAME','SEM_TRADING_SYMBOL','SEM_CUSTOM_SYMBOL','SEM_EXPIRY_DATE','SEM_EXPIRY_FLAG']
@@ -58,8 +60,8 @@ while True:
         print(f"It is now {datetime.datetime.now()}. Continuing...")
         break
     else:
-        print(f"It is currently {current_time}. Waiting for 9:20:30 AM...")
-        time.sleep(1) # sleep for 1 second before checking at 9:20:30 AM
+        print(f"It is currently {current_time}. Waiting for Time Specified")
+        time.sleep(1) # sleep for 1 second before checking Time Specified
 
 ###############################################################################
 
@@ -108,7 +110,7 @@ securityidPE = master.loc[master['SEM_CUSTOM_SYMBOL'] == atmPE, 'SEM_SMST_SECURI
 print(f'Retrieved Security Id of Boker for CE is {securityidCE}')
 print(f'Retrieved Security Id of Boker for PE is {securityidPE}')
 
-print(f'placing Market Orders for {atmCE} and {atmPE}')
+print(f'placing Market Orders for {atmCE} and {atmPE}, Time is {datetime.datetime.now()}')
 
 ########################################################################################
 
@@ -119,7 +121,7 @@ dhan.place_order(security_id=str(securityidCE),
     order_type=dhan.MARKET,
     product_type=dhan.INTRA,
     price=0)
-print(f'Market Order Placed for {atmCE}')
+print(f'Market Order Placed for {atmCE}, Time is {datetime.datetime.now()}')
 
 dhan.place_order(security_id=str(securityidPE),  
     exchange_segment=dhan.FNO,
@@ -128,7 +130,7 @@ dhan.place_order(security_id=str(securityidPE),
     order_type=dhan.MARKET,
     product_type=dhan.INTRA,
     price=0)
-print(f'Market Order Placed for {atmPE}')
+print(f'Market Order Placed for {atmPE}, Time is {datetime.datetime.now()}')
 
 ################################################################################
 print(f"CEentryprice is {ce_entry_price}")
