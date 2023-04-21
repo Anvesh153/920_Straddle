@@ -4,7 +4,7 @@ Author = RustAlgo
 Basic Code Created in an Hour purely for Education, Not for Trading Using Real Money
 You are Solely and wholly Responsible for Your Loss, Author is Not Responsible for Any of Your Losses
 
-For Morea details refer README.md
+For More details refer README.md
 
 """
 
