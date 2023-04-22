@@ -149,7 +149,7 @@ while traded == "No":
     try:
         LTPofCE=nse_quote_ltp(underlying,"latest","CE",ATM)
         LTPofPE=nse_quote_ltp(underlying,"latest","PE",ATM)
-        print("Inside Exit: Checking CE:",LTPofCE," and PE:",LTPofPE)
+        print("Check Started for SL and Exit")
         if ((LTPofCE > ceSL) or (dt.hour >= 15 and dt.minute >= 15)):
             exitCE= dhan.place_order(security_id=str(securityidCE),  exchange_segment=dhan.FNO,transaction_type=dhan.BUY,quantity=Qty,order_type=dhan.MARKET,product_type=dhan.INTRA,price=0)
             traded = "CE"
