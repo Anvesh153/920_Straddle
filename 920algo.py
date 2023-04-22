@@ -29,6 +29,7 @@ SL= 30 # SL in Points
 ############################################################################################
 underlying = "NIFTY"
 nearestexpiry= expiry_list(underlying)
+print(f'List of Expires available {nearest_expiry[0:3]}')
 expiry= nearestexpiry[0]
 print(f'Selected Expiry is {expiry}')
 
