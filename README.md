@@ -10,7 +10,7 @@ Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://inv
 
 - Make sure python 3 is Installed in your Machine
 - Make Sure Your Trading Ac Balance is '0'
-- If you are using windows run pip install requirements.txt
+- If you are using windows run pip install -r requirements.txt
 - If you are using a Linux Machine run pip3 install requirements.txt
 - Save your Client Id and Access token in dhancred.py file
 - can run python 920algo.py to start the program
