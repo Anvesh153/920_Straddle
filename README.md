@@ -1,7 +1,7 @@
 # 920_Straddle
 ![image](https://user-images.githubusercontent.com/117473489/233215718-7d2358ec-b820-40c5-84ac-a9b88733f276.png)
 
-Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://invite.dhan.co/?invite=YBAKG00069)
+Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://dhan.co/open-demat-account/)
 - Perks: No Annual Maintainence Charges, Free Trading API's, Free Data API for Supertraders & INR 10 Brokerage for Women Traders
 
 ### Broker- Dhan
@@ -17,7 +17,7 @@ Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://inv
 - Comment in issues if any Feedback is needed
 - Pull Requests are welcome
 
-# Disclaimer <p style="color:red;"> 
+# Disclaimer
 
 - You are Solely and wholly Responsible for Your Loss, Author is Not Responsible for Any of Your Losses
 - Fork, clone and Run
@@ -25,7 +25,7 @@ Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://inv
 - Trading with Automated Algorithm's without Manual Supervision is Considered Illegal in Many Countries(Refer Law of The Land)
 - This is Highly Experimental Code written with Minimal Exceptions and Minimal Error Handling
 - Basic Code Created in an Hour purely for Education, Not for Trading Using Real Money
-- Trading API's are Free from [Dhan](https://invite.dhan.co/?invite=YBAKG00069) and Data is Retrieved through [nsepython](https://github.com/aeron7/nsepython)
+- Trading API's are Free from [Dhan](https://dhan.co/open-demat-account/) and Data is Retrieved through [nsepython](https://github.com/aeron7/nsepython)
 - Doesnt work on Cloud(AWS/Azure etc..)
 
 ## Note- Using Third party Library for Price Data Retrieval since Dhan Data API's are Chargeable
