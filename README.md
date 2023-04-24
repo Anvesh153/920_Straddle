@@ -17,7 +17,7 @@ Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://inv
 - Comment in issues if any Feedback is needed
 - Pull Requests are welcome
 
-<p style="color:red;"> # Disclaimer 
+# Disclaimer <p style="color:red;"> 
 
 - You are Solely and wholly Responsible for Your Loss, Author is Not Responsible for Any of Your Losses
 - Fork, clone and Run
