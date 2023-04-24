@@ -15,6 +15,10 @@ Dont Have An Account? Click Here [Open Account Dhan- No AMC Charges](https://dha
 ```bash
 pip install -r requirements.txt
 ```
+- - If you are using Linux/Mac 
+```bash
+pip3 install -r requirements.txt
+```
 - Save your Client Id and Access token in dhancred.py file
 - Run python 920algo.py to start the program
 - Comment your Feedback in Issues
