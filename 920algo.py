@@ -11,7 +11,7 @@ For More details refer README.md
 import datetime
 import time
 import requests
-import pandas as pd
+import polars as pl
 from dhanhq import dhanhq
 import os
 from nsepython import *
@@ -28,6 +28,8 @@ Qty= 50 #For Nifty Enter in Multiples of 50
 SL= 30 # SL in Points
 ############################################################################################
 underlying = "NIFTY"
+
+print(f'Retrieving List of Expires {nearestexpiry[0:3]}')
 
 nearestexpiry = expiry_list(underlying)
 
@@ -53,9 +55,9 @@ with open(file_name, "wb") as f:
     f.write(response.content)
     print(f"Scrip Master '{file_name}' downloaded successfully.")
 
-#Created a Pandas Data Frame for Placing Orders
-required_cols = ['SEM_EXM_EXCH_ID','SEM_SMST_SECURITY_ID','SEM_INSTRUMENT_NAME','SEM_TRADING_SYMBOL','SEM_CUSTOM_SYMBOL','SEM_EXPIRY_DATE','SEM_EXPIRY_FLAG']
-master= pd.read_csv("api-scrip-master.csv",usecols=required_cols)
+#Created a Polars Data Frame for Placing Orders
+required_cols = ['SEM_EXM_EXCH_ID', 'SEM_SMST_SECURITY_ID', 'SEM_INSTRUMENT_NAME', 'SEM_TRADING_SYMBOL', 'SEM_CUSTOM_SYMBOL', 'SEM_EXPIRY_DATE', 'SEM_EXPIRY_FLAG']
+master = pl.read_csv("api-scrip-master.csv", columns=required_cols)
 
 #############################################################################################
 
@@ -109,8 +111,8 @@ peSL= float(round(LTPofPE+SL,1)) #SL in Points
 
 
 #Getting Security ID for ATM CE and PE
-securityidCE = master.loc[master['SEM_CUSTOM_SYMBOL'] == atmCE, 'SEM_SMST_SECURITY_ID'].iloc[0]
-securityidPE = master.loc[master['SEM_CUSTOM_SYMBOL'] == atmPE, 'SEM_SMST_SECURITY_ID'].iloc[0]
+securityidCE = master.filter(pl.col("SEM_CUSTOM_SYMBOL") == atmCE)["SEM_SMST_SECURITY_ID"][0]
+securityidPE = master.filter(pl.col("SEM_CUSTOM_SYMBOL") == atmPE)["SEM_SMST_SECURITY_ID"][0]
 
 print(f'Retrieved Security Id of Boker for CE is {securityidCE}')
 print(f'Retrieved Security Id of Boker for PE is {securityidPE}')
