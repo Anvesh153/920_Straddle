@@ -20,7 +20,9 @@ import json
 
 
 dhan= dhanhq(client_id=dhancred.client_id(),access_token=dhancred.access_token())
-print(f"Session to Broker Dhan Established at {datetime.datetime.now()}")
+print(f"Session to Broker Dhan Established at {datetime.datetime.now()}Hope You saved your Credentils")
+
+
 
 ## Lot Size and SL Points ##########
 
@@ -42,7 +44,7 @@ print(f'Selected Expiry is {expiry}')
 
 # Downloading Scrip Master of Dhan
 
-print("Trying to Download Scrip Master from Broker....")
+print("Trying to Download Scrip Master from Broker ~15 MB File....")
 security_idsource = "https://images.dhan.co/api-data/api-scrip-master.csv"
 
 todays_date= datetime.datetime.now().strftime("%Y-%m-%d")
@@ -79,7 +81,7 @@ expiry_date_string = expiry
 expiry_date = datetime.datetime.strptime(expiry_date_string, '%d-%b-%Y')
 year = expiry_date.year
 month = expiry_date.strftime('%b').upper()
-day = expiry_date.day
+day = str(expiry_date.day).zfill(2) # 28-04-2023 Error Rectified for 04 May Expiry, System is Picking 4 May instead
 
 atmCE= f'NIFTY {day} {month} {ATM} CALL'
 
@@ -158,13 +160,13 @@ while traded == "No":
         if ((LTPofCE > ceSL) or (dt.hour >= 15 and dt.minute >= 15)):
             exitCE= dhan.place_order(security_id=str(securityidCE),  exchange_segment=dhan.FNO,transaction_type=dhan.BUY,quantity=Qty,order_type=dhan.MARKET,product_type=dhan.INTRA,price=0)
             traded = "CE"
-            print(f"Call SL Hit,LTP of CE Leg is {LTPofCE}")
+            print(f"Exiting CE, LTP of CE is {LTPofCE}")
             time.sleep(5)
         elif((LTPofPE > peSL) or (dt.hour >= 15 and dt.minute >= 15)):
 
             exitPE= dhan.place_order(security_id=str(securityidPE),  exchange_segment=dhan.FNO,transaction_type=dhan.BUY,quantity=Qty,order_type=dhan.MARKET,product_type=dhan.INTRA,price=0)
             traded = "PE"
-            print(f"PUT SL Hit,LTP of PE Leg is {LTPofPE}")
+            print(f"Exiting PE, LTP of PE is {LTPofPE}")
             time.sleep(5)
         else:
             print(f"No SL is Hit, LTP of CE is {LTPofCE} and LTP of PE is {LTPofPE}")
@@ -183,7 +185,7 @@ while traded == "No":
                 if ((ltp > peSL) or (dt.hour >= 15 and dt.minute >= 15)):
                     exitPE= dhan.place_order(security_id=str(securityidPE),  exchange_segment=dhan.FNO,transaction_type=dhan.BUY,quantity=Qty,order_type=dhan.MARKET,product_type=dhan.INTRA,price=0)
                     traded = "Close"
-                    print(f"PE SL Hit, LTP of PE is {LTPofPE}")
+                    print(f"Exiting PE, LTP of PE is {LTPofPE}")
                     time.sleep(5)
                 else:
                     print(f"PE SL not hit,LTP of PE is {LTPofPE}")
